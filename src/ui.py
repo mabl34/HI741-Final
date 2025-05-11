@@ -8,9 +8,9 @@ from datetime import datetime
 import os
 
 # Path to credentials file (CSV with Username, Password, Role columns)
-CREDENTIALS_FILE = os.path.join("data", "Credentials.csv")  # Adjusted path for credentials file
-PATIENT_DATA_FILE = os.path.join("data", "Patient_data.csv")  # Adjusted path for patient data file
-NOTE_DATA_FILE = os.path.join("data", "Notes.csv")  # Adjusted path for notes file
+CREDENTIALS_FILE = "data/Credentials.csv"  # Adjusted path for credentials file
+PATIENT_DATA_FILE = "data/Patient_data.csv"  # Adjusted path for patient data file
+NOTE_DATA_FILE = "data/Notes.csv"  # Adjusted path for notes file
 
 
 def authenticate(username, password):
