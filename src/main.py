@@ -6,7 +6,7 @@
 # This is a test change to demonstrate a commit
 print("Welcome to the Medical Records CLI")
 
-from ui import launch_ui
+from src.ui import launch_ui
 
 if __name__ == "__main__":
     launch_ui()
