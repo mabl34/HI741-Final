@@ -5,8 +5,8 @@
 # Define function which loads patient data and returns patients
 
 import csv
-from patient import Patient
-from visit import Visit
+from src.patient import Patient
+from src.visit import Visit
 
 
 def load_patient_data(data_file):
