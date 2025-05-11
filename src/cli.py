@@ -6,9 +6,9 @@
 import argparse
 import sys
 from datetime import datetime
-from data_handler import load_patient_data
-from user import User, Nurse, Clinician, Admin, Management
-from user import authenticate_user
+from src.data_handler import load_patient_data
+from src.user import User, Nurse, Clinician, Admin, Management
+from src.user import authenticate_user
 
 def main():
     parser = argparse.ArgumentParser(description="Healthcare CLI Application")
