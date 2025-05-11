@@ -1,19 +1,20 @@
+import os
 import tkinter as tk
 import csv
-from tkinter import messagebox, simpledialog
+from tkinter import messagebox
 from src.user import User, Nurse, Clinician, Admin, Management
 from src.data_handler import load_patient_data
-from src.logger import log_usage 
+from src.logger import log_usage
 from datetime import datetime
 
-# Path to credentials file (CSV with Username, Password, Role columns)
-import os
+# Path adjustment to move one level up from src to the root folder, then into the 'data' folder
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Directory of the script (i.e., src)
+PROJECT_DIR = os.path.dirname(BASE_DIR)  # Move one level up to the root folder of the project
 
-CREDENTIALS_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "Credentials.csv")
-PATIENT_DATA_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "Patient_data.csv")
-NOTE_DATA_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "Notes.csv")
-
-
+# Now, join to the data folder
+CREDENTIALS_FILE = os.path.join(PROJECT_DIR, 'data', 'Credentials.csv')
+PATIENT_DATA_FILE = os.path.join(PROJECT_DIR, 'data', 'Patient_data.csv')
+NOTE_DATA_FILE = os.path.join(PROJECT_DIR, 'data', 'Notes.csv')
 
 def authenticate(username, password):
     try:
@@ -53,7 +54,7 @@ def authenticate(username, password):
         return None
 
     except FileNotFoundError:
-        messagebox.showerror("Error", "Credentials file not found.")
+        messagebox.showerror("Error", f"Credentials file not found: {CREDENTIALS_FILE}")
         return None
 
 
