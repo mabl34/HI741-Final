@@ -19,7 +19,7 @@ The program features a **user-friendly graphical interface (GUI)** and tracks us
 ### 1. Clone the GitHub Repository
 
 ```bash
-git clone https://github.com/yourusername/HI741-Final.git
+git clone https://github.com/mabl34/HI741-Final.git
 cd HI741-Final
 ```
 
