@@ -31,17 +31,11 @@ If you're using `pip`:
 pip install -r requirements.txt
 ```
 
-If you're using Anaconda:
-
-```bash
-conda create --name healthcare_env --file=requirements.txt
-conda activate healthcare_env
-```
 
 ### 3. Run the Program
 
 ```bash
-python src/main.py
+python -m src.main
 ```
 
 The GUI will launch and prompt you to log in using your credentials from `Credentials.csv`.
