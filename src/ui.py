@@ -1,15 +1,16 @@
 import tkinter as tk
 import csv
 from tkinter import messagebox, simpledialog
-from user import User, Nurse, Clinician, Admin, Management
-from data_handler import load_patient_data
-from logger import log_usage 
+from src.user import User, Nurse, Clinician, Admin, Management  # Adjusted import for user.py
+from src.data_handler import load_patient_data  # Adjusted import for data_handler.py
+from src.logger import log_usage  # Adjusted import for logger.py
 from datetime import datetime
+import os
 
 # Path to credentials file (CSV with Username, Password, Role columns)
-CREDENTIALS_FILE = "Credentials.csv"
-PATIENT_DATA_FILE = "Patient_data.csv"
-NOTE_DATA_FILE = "Notes.csv"
+CREDENTIALS_FILE = os.path.join("data", "Credentials.csv")  # Adjusted path for credentials file
+PATIENT_DATA_FILE = os.path.join("data", "Patient_data.csv")  # Adjusted path for patient data file
+NOTE_DATA_FILE = os.path.join("data", "Notes.csv")  # Adjusted path for notes file
 
 
 def authenticate(username, password):
@@ -52,12 +53,6 @@ def authenticate(username, password):
     except FileNotFoundError:
         messagebox.showerror("Error", "Credentials file not found.")
         return None
-
-
-        
-        
-
-        
 
 
 def launch_ui():
@@ -117,3 +112,4 @@ def show_menu(user, patients):
         tk.Button(menu, text="Exit", command=menu.destroy).pack(pady=10)
 
     menu.mainloop()
+
