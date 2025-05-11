@@ -8,16 +8,16 @@ import csv
 import sys
 import random
 from datetime import datetime
-from patient import Patient
-from visit import Visit
+from src.patient import Patient
+from src.visit import Visit
 import matplotlib.pyplot as plt
 from collections import defaultdict
 import matplotlib.ticker as ticker 
 import tkinter as tk
 from tkinter import Toplevel, messagebox
 import pandas as pd
-from data_handler import load_patient_data
-from logger import log_usage
+from src.data_handler import load_patient_data
+from src.logger import log_usage
 
 
 
