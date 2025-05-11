@@ -7,9 +7,12 @@ from src.logger import log_usage
 from datetime import datetime
 
 # Path to credentials file (CSV with Username, Password, Role columns)
-CREDENTIALS_FILE = "data/Credentials.csv"
-PATIENT_DATA_FILE = "data/Patient_data.csv"
-NOTE_DATA_FILE = "data/Notes.csv"
+import os
+
+CREDENTIALS_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "Credentials.csv")
+PATIENT_DATA_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "Patient_data.csv")
+NOTE_DATA_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "Notes.csv")
+
 
 
 def authenticate(username, password):
