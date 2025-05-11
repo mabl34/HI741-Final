@@ -41,7 +41,7 @@ conda activate healthcare_env
 ### 3. Run the Program
 
 ```bash
-python main.py
+python src/main.py
 ```
 
 The GUI will launch and prompt you to log in using your credentials from `Credentials.csv`.
