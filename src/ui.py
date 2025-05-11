@@ -18,6 +18,7 @@ NOTE_DATA_FILE = os.path.join(PROJECT_DIR, 'data', 'Notes.csv')
 
 def authenticate(username, password):
     try:
+        print(f"Attempting to open credentials file at: {CREDENTIALS_FILE}")  # Debugging line
         with open(CREDENTIALS_FILE, newline='') as f:
             reader = csv.reader(f)
             next(reader)  # Skip header
@@ -43,7 +44,7 @@ def authenticate(username, password):
                     else:
                         messagebox.showerror("Login Failed", "Invalid role.")
                         return None
-                    
+
                     log_usage(username, role, login_time, action="Login", status="Success")
                     return user
 
@@ -56,6 +57,7 @@ def authenticate(username, password):
     except FileNotFoundError:
         messagebox.showerror("Error", f"Credentials file not found: {CREDENTIALS_FILE}")
         return None
+
 
 
         
